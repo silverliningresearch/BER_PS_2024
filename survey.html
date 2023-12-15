@@ -93,7 +93,7 @@
 
             if (api.fn.getCurrentPageIndex() === 7) { //postal code
               showPostalCodeSection_q6();
-            } else {
+            } else {  
               hidePostalCodeSection_q6();
             }
 
@@ -109,23 +109,24 @@
               hidePostalCodeSection_ADV_6_3();
             }
             
-            if (api.fn.getCurrentPageIndex() === 39) { //page for Google Map 
-              showGoogleMaps();
-            } else {
-              hideGoogleMaps();
-            }
-
             if (api.fn.getCurrentPageIndex() === 40) { //postal code q27
               showPostalCodeSection_q27() ;
             } else {
               hidePostalCodeSection_q27();
             }
 
-            if (api.fn.getCurrentPageIndex() === 43) { //postal code q29
-              showPostalCodeSection_q29() ;
-            } else {
-              hidePostalCodeSection_q29();
+            switch(api.fn.getCurrentPageIndex() ) {
+              case 39:
+                showGoogleMaps("Q27");
+                break;
+              case 43:      //postal code q29
+                showGoogleMaps("Q29");
+                break;
+              default:
+                hideGoogleMaps();
+                break;
             }
+
           };
 
           api.events.subscribe('next', googleMapsHandler);
