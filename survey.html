@@ -33,7 +33,7 @@
 
   <body>
     <survalyzer-survey
-      surveyhash="jhxjmjotuf"
+      surveyhash="mmpbaaytfc"
       tenant="silverlining"
     ></survalyzer-survey>
 
@@ -51,9 +51,12 @@
     <script src="scripts/maps_search.js"></script>
     <script src="scripts/postal_code_search_q6.js"></script>
     <script src="scripts/postal_code_search_q27.js"></script>
+    <script src="scripts/postal_code_search_ADV_6_3.js"></script>
+    <script src="scripts/postal_code_search_q29.js"></script>
+
     <script src="scripts/flight_search_q3.js"></script>
     <script src="scripts/flight_search_q24.js"></script>
-
+    
     <div id="selectedAddress"></div>
     <input
       id="pac-input"
@@ -82,16 +85,10 @@
           const googleMapsHandler = () => {
             console.log("Current Page Index: ", api.fn.getCurrentPageIndex() );
 
-            if (api.fn.getCurrentPageIndex() === 37) { //page for Google Map 
-              showGoogleMaps();
+            if (api.fn.getCurrentPageIndex() === 2) { //Flight departure
+              showFlightCodeSection_q3() ;
             } else {
-              hideGoogleMaps();
-            }
-
-            if (api.fn.getCurrentPageIndex() === 38) { //postal code
-              showPostalCodeSection_q27() ;
-            } else {
-              hidePostalCodeSection_q27();
+              hideFlightCodeSection_q3();
             }
 
             if (api.fn.getCurrentPageIndex() === 7) { //postal code
@@ -100,18 +97,35 @@
               hidePostalCodeSection_q6();
             }
 
-            if (api.fn.getCurrentPageIndex() === 2) { //Flight departure
-              showFlightCodeSection_q3() ;
-            } else {
-              hideFlightCodeSection_q3();
-            }
-
             if (api.fn.getCurrentPageIndex() === 25) { //Flight arrival
               showFlightCodeSection_q24() ;
             } else {
               hideFlightCodeSection_q24();
             }
 
+            if (api.fn.getCurrentPageIndex() === 37) { //postal code ADV_6_3
+              showPostalCodeSection_ADV_6_3() ;
+            } else {
+              hidePostalCodeSection_ADV_6_3();
+            }
+            
+            if (api.fn.getCurrentPageIndex() === 39) { //page for Google Map 
+              showGoogleMaps();
+            } else {
+              hideGoogleMaps();
+            }
+
+            if (api.fn.getCurrentPageIndex() === 40) { //postal code q27
+              showPostalCodeSection_q27() ;
+            } else {
+              hidePostalCodeSection_q27();
+            }
+
+            if (api.fn.getCurrentPageIndex() === 43) { //postal code q29
+              showPostalCodeSection_q29() ;
+            } else {
+              hidePostalCodeSection_q29();
+            }
           };
 
           api.events.subscribe('next', googleMapsHandler);
