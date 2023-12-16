@@ -115,6 +115,12 @@
               hidePostalCodeSection_q27();
             }
 
+            if (api.fn.getCurrentPageIndex() === 44) { //postal code q29
+              showPostalCodeSection_q29() ;
+            } else {
+              hidePostalCodeSection_q29();
+            }
+
             switch(api.fn.getCurrentPageIndex() ) {
               case 39:
                 showGoogleMaps("Q27");
