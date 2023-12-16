@@ -40,26 +40,26 @@ function initCurrentTimeVars() {
    console.log("currentMonth: ", currentMonth);
 
    switch(currentMonth) {
-    case "01-2023":
-    case "02-2023":
-    case "03-2023":                  
-    case "04-2023":
-      total_quota = 2000;
+    case "01-2024":
+    case "02-2024":
+    case "03-2024":                  
+    case "04-2024":
+      total_quota = 1834;
       break;
-    case "05-2023":
-    case "06-2023":
-    case "07-2023":
-    case "08-2023":
-    case "09-2023":      
-    case "10-2023":          
-      total_quota = 2500;
+    case "05-2024":
+    case "06-2024":
+    case "07-2024":
+    case "08-2024":
+    case "09-2024":      
+    case "10-2024":          
+      total_quota = 2334;
       break;
-    case "11-2023":          
-    case "12-2023":              
-      total_quota = 2000;
+    case "11-2024":          
+    case "12-2024":              
+      total_quota = 1834;
       break;
     default:
-      total_quota = 2000;
+      total_quota = 1834;
       break;
   }
 }
