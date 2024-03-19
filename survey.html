@@ -97,35 +97,35 @@
               hidePostalCodeSection_q6();
             }
 
-            if (api.fn.getCurrentPageIndex() === 25) { //Flight arrival
+            if (api.fn.getCurrentPageIndex() === 27) { //Flight arrival: 25==>27
               showFlightCodeSection_q24() ;
             } else {
               hideFlightCodeSection_q24();
             }
 
-            if (api.fn.getCurrentPageIndex() === 37) { //postal code ADV_6_3
+            if (api.fn.getCurrentPageIndex() === 39) { //postal code ADV_6_3: 37==>39
               showPostalCodeSection_ADV_6_3() ;
             } else {
               hidePostalCodeSection_ADV_6_3();
             }
             
-            if (api.fn.getCurrentPageIndex() === 40) { //postal code q27
+            if (api.fn.getCurrentPageIndex() === 42) { //postal code q27: 40==>42
               showPostalCodeSection_q27() ;
             } else {
               hidePostalCodeSection_q27();
             }
 
-            if (api.fn.getCurrentPageIndex() === 44) { //postal code q29
+            if (api.fn.getCurrentPageIndex() === 46) { //postal code q29: 44==>46
               showPostalCodeSection_q29() ;
             } else {
               hidePostalCodeSection_q29();
             }
 
             switch(api.fn.getCurrentPageIndex() ) {
-              case 39:
+              case 41: //39==>41
                 showGoogleMaps("Q27");
                 break;
-              case 43:      //postal code q29
+              case 45:      //postal code q29 //43==>45
                 showGoogleMaps("Q29");
                 break;
               default:
