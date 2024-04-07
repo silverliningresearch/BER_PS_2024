@@ -7,13 +7,13 @@ function find_postal_code_ADV_6_3(list, item) {
     if (item !== "") {
       for (i = 0; i < list.length; i++) {
         if (list[i].Name.toLowerCase() === item) {
-          $('.rt-btn.rt-btn-next').show(); 
+          //$('.rt-btn.rt-btn-next').show(); 
           return true;
         }
       }
     }
   }
-  $('.rt-btn.rt-btn-next').hide(); 
+  //$('.rt-btn.rt-btn-next').hide(); 
   return false;
 }
 
@@ -94,7 +94,7 @@ function showPostalCodeSection_ADV_6_3() {
       console.log("not found ", document.getElementById('inputPostalCodeADV_6_3ID').value);
     }
 
-    $('.rt-btn.rt-btn-next').hide(); 
+    //$('.rt-btn.rt-btn-next').hide(); 
     $('#inputPostalCodeADV_6_3ID').show(); 
 }
 
