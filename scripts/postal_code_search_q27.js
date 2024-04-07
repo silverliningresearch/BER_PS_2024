@@ -13,7 +13,7 @@ function find_postal_code_q27(list, item) {
       }
     }
   }
-  //$('.rt-btn.rt-btn-next').hide(); 
+  $('.rt-btn.rt-btn-next').hide(); 
   return false;
 }
 
@@ -111,14 +111,12 @@ function showPostalCodeSection_q27() {
       console.log("not found ", document.getElementById('inputPostalCodeQ27ID').value);
     }
 
-    //$('.rt-btn.rt-btn-next').hide(); 
+    $('.rt-btn.rt-btn-next').hide(); 
     $('#inputPostalCodeQ27ID').show(); 
 }
 
 function hidePostalCodeSection_q27() {
   $('#inputPostalCodeQ27ID').hide();
-  //var x = document.getElementById('inputPostalCodeQ27ID');
-  //x.style.display = "none";
 }
 
 /* function waitForElement(querySelector, timeout){

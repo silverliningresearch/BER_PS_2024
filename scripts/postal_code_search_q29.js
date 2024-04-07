@@ -13,7 +13,7 @@ function find_postal_code_q29(list, item) {
       }
     }
   }
-  //$('.rt-btn.rt-btn-next').hide(); 
+  $('.rt-btn.rt-btn-next').hide(); 
   return false;
 }
 
@@ -94,7 +94,7 @@ function showPostalCodeSection_q29() {
       console.log("not found ", document.getElementById('inputPostalCodeQ29ID').value);
     }
 
-    //$('.rt-btn.rt-btn-next').hide(); 
+    $('.rt-btn.rt-btn-next').hide(); 
     $('#inputPostalCodeQ29ID').show(); 
 }
 
