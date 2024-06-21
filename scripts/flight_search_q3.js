@@ -111,6 +111,9 @@ function select_flight_q3() {
       api.fn.answers({urlVar15:  currentFlight.Airline });
       api.fn.answers({urlVar16:  flightDestinationValue });
       api.fn.answers({urlVar17:  currentFlight.Flight });
+
+      if (currentFlight.Schengen) api.fn.answers({Schengen_flight:  currentFlight.Schengen});
+      
       found = true;
       $('.rt-btn.rt-btn-next').show(); 
       break;
