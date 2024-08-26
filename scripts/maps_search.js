@@ -47,6 +47,14 @@
               api.fn.answers({q29_postalcode: postal_code + " - " + locality + ", " + city});
             }
 
+            if (postal_code.length > 0) {  
+              $('.rt-btn.rt-btn-next').show(); 
+            }
+            else
+            {
+              alert("Please select a location from the map.");
+            }
+
           }
           }
         }
@@ -103,6 +111,9 @@
       //console.log( rt_container[i].style.paddingBottom);
       slt_page_container[i].style.paddingBottom = 0 +"px";
     }
+
+    $('.rt-btn.rt-btn-next').hide(); 
+
   }
 
   function initAutocomplete() {
