@@ -47,6 +47,9 @@
               api.fn.answers({q29_postalcode: postal_code + " - " + locality + ", " + city});
             }
 
+
+          }
+
             if (postal_code.length > 0) {  
               $('.rt-btn.rt-btn-next').show(); 
             }
@@ -54,8 +57,6 @@
             {
               alert("Please select a location from the map.");
             }
-
-          }
           }
         }
     }); 
