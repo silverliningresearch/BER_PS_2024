@@ -33,24 +33,24 @@
             }
             //console.log("full address: ", results[0]);  
 
-            document.getElementById("selectedAddress").innerHTML = "Your selection: Country = " + country + "; Postal Code = " + postal_code;
+            document.getElementById("selectedAddress").innerHTML = "Your selection: Country = " + country + "; Postal Code = " + postal_code + " " + locality + " " + city;
             var address = document.getElementById("selectedAddress").innerHTML;
 
             if (current_map_question == "Q27") {
               api.fn.answers({urlVar20:  address});
-              api.fn.answers({q27_Goolge_Maps: postal_code + " - " + locality + ", " + city});
+              api.fn.answers({q27_Goolge_Maps: postal_code + " - " + locality + ", " + city + ", " + country});
               api.fn.answers({q27_search_list:  ""});
             } 
             else if (current_map_question == "Q29") 
             {
               api.fn.answers({q29_address: address});
-              api.fn.answers({q29_postalcode: postal_code + " - " + locality + ", " + city});
+              api.fn.answers({q29_postalcode: postal_code + " - " + locality + ", " + city + ", " + country});
             }
 
 
           }
 
-            if (postal_code.length > 0) {  
+            if (postal_code.length > 3) {  
               $('.rt-btn.rt-btn-next').show(); 
             }
             else
