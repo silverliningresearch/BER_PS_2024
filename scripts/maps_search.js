@@ -50,7 +50,7 @@
 
           }
 
-            if (postal_code.length > 3) {  
+            if (postal_code.length > 0) {  
               $('.rt-btn.rt-btn-next').show(); 
             }
             else
