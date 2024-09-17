@@ -7,7 +7,7 @@ function find_postal_code_q29(list, item) {
     if (item !== "") {
       for (i = 0; i < list.length; i++) {
         if (list[i].Name.toLowerCase() === item) {
-          //$('.rt-btn.rt-btn-next').show(); 
+          $('.rt-btn.rt-btn-next').show(); 
           return true;
         }
       }
