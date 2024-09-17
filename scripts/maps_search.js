@@ -12,43 +12,43 @@
         'latLng': latLng
     }, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-          if (results[0]) {
-          for(var j=0;j < results[0].address_components.length; j++){
-            for(var k=0; k < results[0].address_components[j].types.length; k++){
-                if(results[0].address_components[j].types[k] == "postal_code"){
-                  postal_code = results[0].address_components[j].short_name;
-                }
-
-                if(results[0].address_components[j].types[k] == "country"){
-                  country = results[0].address_components[j].long_name;
-                }
-
-                if(results[0].address_components[j].types[k] == "administrative_area_level_1"){
-                  city = results[0].address_components[j].long_name;
-                }
-
-                if(results[0].address_components[j].types[k] == "locality"){
-                  locality = results[0].address_components[j].long_name;
-                }
-            }
-            //console.log("full address: ", results[0]);  
-
-            document.getElementById("selectedAddress").innerHTML = "Your selection: Country = " + country + "; Postal Code = " + postal_code + " " + locality + " " + city;
-            var address = document.getElementById("selectedAddress").innerHTML;
-
-            if (current_map_question == "Q27") {
-              api.fn.answers({urlVar20:  address});
-              api.fn.answers({q27_Goolge_Maps: postal_code + " - " + locality + ", " + city + ", " + country});
-              api.fn.answers({q27_search_list:  ""});
-            } 
-            else if (current_map_question == "Q29") 
+          if (results[0]) 
+          {
+            for(var j=0;j < results[0].address_components.length; j++)
             {
-              api.fn.answers({q29_address: address});
-              api.fn.answers({q29_postalcode: postal_code + " - " + locality + ", " + city + ", " + country});
+                for(var k=0; k < results[0].address_components[j].types.length; k++){
+                    if(results[0].address_components[j].types[k] == "postal_code"){
+                      postal_code = results[0].address_components[j].short_name;
+                    }
+
+                    if(results[0].address_components[j].types[k] == "country"){
+                      country = results[0].address_components[j].long_name;
+                    }
+
+                    if(results[0].address_components[j].types[k] == "administrative_area_level_1"){
+                      city = results[0].address_components[j].long_name;
+                    }
+
+                    if(results[0].address_components[j].types[k] == "locality"){
+                      locality = results[0].address_components[j].long_name;
+                    }
+                }
+                //console.log("full address: ", results[0]);  
+
+                document.getElementById("selectedAddress").innerHTML = "Your selection: Country = " + country + "; Postal Code = " + postal_code + " " + locality + " " + city;
+                var address = document.getElementById("selectedAddress").innerHTML;
+
+                if (current_map_question == "Q27") {
+                  api.fn.answers({urlVar20:  address});
+                  api.fn.answers({q27_Goolge_Maps: postal_code + " - " + locality + ", " + city + ", " + country});
+                  api.fn.answers({q27_search_list:  ""});
+                } 
+                else if (current_map_question == "Q29") 
+                {
+                  api.fn.answers({q29_address: address});
+                  api.fn.answers({q29_postalcode: postal_code + " - " + locality + ", " + city + ", " + country});
+                }
             }
-
-
-          }
 
             if (postal_code.length > 0) {  
               $('.rt-btn.rt-btn-next').show(); 
