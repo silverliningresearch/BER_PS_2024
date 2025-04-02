@@ -61,11 +61,27 @@ function initCurrentTimeVars() {
     case "01-2025":              
     case "02-2025":                  
     case "03-2025":              
-    case "04-2025":              
-    case "05-2025":              
-    case "06-2025":                          
       total_quota = 500;
+      break;         
+    
+    case "04-2025":   
+    case "05-2025":              
+      total_quota = 600;
+      break;
+
+    case "06-2025":                          
+    case "07-2025":                          
+    case "08-2025":                          
+    case "09-2025":                              
+      total_quota = 700;
       break;      
+
+    case "10-2025":                          
+    case "11-2025":                          
+    case "12-2025":                              
+      total_quota = 600;
+      break;      
+
     default:
       total_quota = 1834;
       break;
@@ -117,6 +133,12 @@ function prepareInterviewData() {
     var quota_month =  quota_data_temp[i].Month + "-"  + quota_data_temp[i].Year; 
     if (quota_month== currentMonth)
     {
+      if (currentMonth == "04-2025") 
+      {
+        quota_data_temp[i].Quota =  Math.round(quota_data_temp[i].Quota*1.1);      
+      }
+      
+
       quota_data.push(quota_data_temp[i]);
     }
   }
